@@ -26,6 +26,10 @@ import ClickCounterTwo from './components/renderProps/ClickCounterTwo';
 import HoverCounterTwo from './components/renderProps/HoverCounterTwo';
 import User from './components/renderProps/User';
 import RenderCounter from './components/renderProps/renderCounter';
+import ComponentC from './components/context/ComponentC';
+import { UserProvider } from './components/context/UserContext';
+import PostList from './components/http/PostList';
+import PostForm from './components/http/PostForm';
 function App() {
   return (
     <div className="App">
@@ -176,6 +180,23 @@ function App() {
           <User render={(isLoggedIn)=>isLoggedIn?'Deepak':'Guest'}/> */}
           <RenderCounter  render={(count,incrementCount)=><ClickCounterTwo count={count} incrementCount={incrementCount}/>}/>
           <RenderCounter  render={(count,incrementCount)=><HoverCounterTwo count={count} incrementCount={incrementCount}/>}/>
+        </div>
+      </section>
+
+      <section id='context'>
+        <h1>COntext</h1><hr/>
+        <div className='center'>
+          <UserProvider value={'Deepak'}>
+          <ComponentC/>
+          </UserProvider>
+        </div>
+      </section>
+
+      <section id='http'>
+        <h1>Http | Axios</h1><hr/>
+        <div className='center'>
+          <PostList/>
+          <PostForm/>
         </div>
       </section>
     </div>
