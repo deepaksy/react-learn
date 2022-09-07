@@ -161,3 +161,25 @@ _______________________
 4. Error Handling: -
     * static getDerivedStateFromError
     * componentDidCatch
+
+
+## Higher Order component
+
+There is a situtation we often encounter that we have a common functionality or code that is being used by multiple components in a React application. Going In a conventional way, it leads to code redundancy and may affect programming principles.
+
+**HOC**
+
+    A pattern where a function takes a component as an argument and returns a new component.
+
+    ex:
+```Typescript
+const NewComponent= higherOrderComponent(originalComponent)
+const EnhancedComponent = higherOrderComponent(originalComponent)
+
+const IronMan=withSuit(TonyStark)
+```
+
+
+## RenderProps
+
+As we know that we can pass data and methods as a props to a component.

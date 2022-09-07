@@ -22,6 +22,10 @@ import Hero from './components/errorBoundary/Hero';
 import ErrorBoundary from './components/errorBoundary/ErrorBoundary';
 import ClickCounter from './components/higherOrderCompoents/ClickCounter';
 import HoverCounter from './components/higherOrderCompoents/HoverCounter';
+import ClickCounterTwo from './components/renderProps/ClickCounterTwo';
+import HoverCounterTwo from './components/renderProps/HoverCounterTwo';
+import User from './components/renderProps/User';
+import RenderCounter from './components/renderProps/renderCounter';
 function App() {
   return (
     <div className="App">
@@ -162,6 +166,16 @@ function App() {
         <div className='center'>
           <ClickCounter/>
           <HoverCounter/>
+        </div>
+      </section>
+      <section id='renderProps'>
+        <h1>Render Props</h1><hr/>
+        <div className='center'>
+          {/* <ClickCounterTwo/>
+          <HoverCounterTwo/>
+          <User render={(isLoggedIn)=>isLoggedIn?'Deepak':'Guest'}/> */}
+          <RenderCounter  render={(count,incrementCount)=><ClickCounterTwo count={count} incrementCount={incrementCount}/>}/>
+          <RenderCounter  render={(count,incrementCount)=><HoverCounterTwo count={count} incrementCount={incrementCount}/>}/>
         </div>
       </section>
     </div>
