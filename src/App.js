@@ -30,6 +30,7 @@ import ComponentC from './components/context/ComponentC';
 import { UserProvider } from './components/context/UserContext';
 import PostList from './components/http/PostList';
 import PostForm from './components/http/PostForm';
+import Hook from './components/hooks/Hook';
 function App() {
   return (
     <div className="App">
@@ -198,6 +199,11 @@ function App() {
           <PostList/>
           <PostForm/>
         </div>
+      </section>
+
+      <section id='hooks'>
+        <h1>React Hooks</h1><hr/>
+        <Hook/>
       </section>
     </div>
   );

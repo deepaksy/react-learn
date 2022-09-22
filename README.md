@@ -183,3 +183,65 @@ const IronMan=withSuit(TonyStark)
 ## RenderProps
 
 As we know that we can pass data and methods as a props to a component.
+
+# What are Hooks?
+
+Hooks are a new feature addition in React version 16.8 which allow you to use React features without having to write a class.
+
+Ex: State of a component
+
+Hooks don't work inside classes
+
+# Why Hooks?
+
+- understand how this keyword works in javascript.
+- Remember to bind event handler in class component 
+- classes don't minify very well and make hot reloading very unreilable.
+*Reason 2*
+- There is no particular way to reuse stateful component logic
+- HOC and render props pattern do address this problem
+- Makes the code harder to follow
+- There is need a to share stateful logic in a better way.
+*Reason 3*
+- Create components for complex scenarios sucy as data fetching  and subscribing to events related code is not organized in one place.
+
+ex: Data fetching - didMount and DidUpdate
+- Because of stateful logic - cannot break components into smaller ones.
+
+# **Rules of Hooks**
+
+- **Only call Hooks at the Top level**
+&nbsp;Dont call Hooks inside loops,conditions, or nested functions
+
+- **Only call Hooks from React Functions**
+&nbsp; Call them from within React functional component and not just any regular javascript function.
+
+
+
+## useReducer Hook
+
+It is a hook that is used for state management.
+- It is an alternative to useState
+- *useState* is build using useReducer.
+- When to useReducer vs useState?
+
+
+        useState - state
+        useEffect - side effects
+        useContext - context API
+        useReducer - reducers
+
+### reduce vs useReducer
+
+|reduce in Javascript| useReducer in React|
+|--------------------|--------------------|
+|array.reduce(reducer,initialValue)|useReducer(reducer,initialState)|
+|singleValue=reducer(accumulator,itemValue)|newState=reducer(currentState,action)|
+|reduce method returns a single value| useReducer returns a pairs of value [newState,dispatch]|
+
+
+## useReducer with useContex
+
+- useReducer - Local state management
+- Share state between components - Global state management
+- useReducer+useContext
